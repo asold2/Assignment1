@@ -1,0 +1,71 @@
+﻿@page "/AddAdults"
+@using Microsoft.AspNetCore.Components
+@attribute [Authorize(Policy = "MustBeAdmin")]
+@using Assignment1.Model
+@using Assignment1.Data
+@inject IAdultsData AdultsData
+@inject NavigationManager NavigationManager
+<h3>AddPeople</h3>
+<EditForm Model="@person" OnValidSubmit="@AddNewAdult">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="form-group"> Adult id:<br/>
+        <InputNumber @bind-Value="person.Id"/>        
+    </div>
+    <div class="form-group"> Adult first name:<br/>
+        <InputText @bind-Value="person.FirstName"/>        
+    </div>
+    <div class="form-group"> Adult last name:<br/>
+        <InputText @bind-Value="person.LastName"/>        
+    </div>
+    <div class="form-group"> Adult eye color:<br/>
+        <InputText @bind-Value="person.EyeColor"/>        
+    </div>
+    <div class="form-group"> Adult hair color:<br/>
+        <InputText @bind-Value="person.HairColor"/>        
+    </div>
+    <div class="form-group"> Adult age:<br/>
+        <InputNumber @bind-Value="person.Age"/>        
+    </div>
+    <div class="form-group"> Adult weight:<br/>
+        <InputNumber @bind-Value="person.Weight"/>        
+    </div>
+    <div class="form-group"> Adult height:<br/>
+        <InputNumber @bind-Value="person.Height"/>        
+    </div>
+    <div class="form-group"> Adult sex:<br/>
+        <InputText @bind-Value="person.Sex"/>
+    </div>
+
+
+
+    <div class="form-group"> Job Title:<br/>
+        <InputText @bind-Value="job.JobTitle"/>        
+    </div>
+    <div class="form-group"> Job Salary:<br/>
+            <InputNumber @bind-Value="job.Salary"/>        
+        </div>
+    <p class="action">
+        <button class="btn btn-outline-dark" type="submit">Create</button>
+    </p>
+    
+</EditForm>
+
+@code {
+    
+    private Person person = new Adult();
+    private Job job = new Job();
+    
+    
+    
+
+    private void AddNewAdult()
+    {
+        Adult adult = (Adult)person;
+        adult.JobTitle = job;
+        
+        AdultsData.addAdult(adult);
+        NavigationManager.NavigateTo("/ViewAdults");
+    }
+
+}
