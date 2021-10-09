@@ -127,10 +127,6 @@ using Assignment1.Model;
             adultsToShow = allAduts.Where(adult => adult.FirstName.Equals(searchByName)).ToList();
             
         }
-        else if (searchByName.Equals("All"))
-        {
-            adultsToShow = allAduts;
-        }
         else
         {
             adultsToShow = allAduts;
