@@ -118,22 +118,30 @@ using Assignment1.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 54 "F:\C#Projetcs\Assignment1\Assignment1\Pages\AddAdults.razor"
+#line 58 "F:\C#Projetcs\Assignment1\Assignment1\Pages\AddAdults.razor"
        
     
     private Person person = new Adult();
     private Job job = new Job();
+    private Adult adult = new Adult();
+    private string sex ="";
     
     
     
 
     private void AddNewAdult()
     {
-        Adult adult = (Adult)person;
+        adult = (Adult)person;
         adult.JobTitle = job;
+        adult.Sex = sex;
         
         AdultsData.addAdult(adult);
         NavigationManager.NavigateTo("/ViewAdults");
+    }
+
+    private void SetGender(ChangeEventArgs changeEventArgs)
+    {
+        sex = changeEventArgs.Value.ToString();
     }
 
 

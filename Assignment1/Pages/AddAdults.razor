@@ -34,7 +34,11 @@
         <InputNumber @bind-Value="person.Height"/>        
     </div>
     <div class="form-group"> Adult sex:<br/>
-        <InputText @bind-Value="person.Sex"/>
+        <select class="form-group selectpicker" @onchange="arg=>SetGender(arg)" style="width:50px">
+            <option>M</option>
+            <option>F</option>
+            <option>Other</option>
+        </select>
     </div>
 
 
@@ -55,17 +59,25 @@
     
     private Person person = new Adult();
     private Job job = new Job();
+    private Adult adult = new Adult();
+    private string sex ="";
     
     
     
 
     private void AddNewAdult()
     {
-        Adult adult = (Adult)person;
+        adult = (Adult)person;
         adult.JobTitle = job;
+        adult.Sex = sex;
         
         AdultsData.addAdult(adult);
         NavigationManager.NavigateTo("/ViewAdults");
+    }
+
+    private void SetGender(ChangeEventArgs changeEventArgs)
+    {
+        sex = changeEventArgs.Value.ToString();
     }
 
 }

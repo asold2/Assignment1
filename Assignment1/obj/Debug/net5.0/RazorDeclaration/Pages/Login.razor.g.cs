@@ -98,7 +98,7 @@ using Assignment1.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 35 "F:\C#Projetcs\Assignment1\Assignment1\Pages\Login.razor"
+#line 37 "F:\C#Projetcs\Assignment1\Assignment1\Pages\Login.razor"
        
     private string username;
     private string password;
@@ -132,7 +132,7 @@ using Assignment1.Authentication;
         }
         catch (Exception e)
         {
-
+            errorMessage = e.Message;
         }
     }
 

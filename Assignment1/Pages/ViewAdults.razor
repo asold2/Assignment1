@@ -1,6 +1,7 @@
 ﻿@page "/ViewAdults"
 @using Assignment1.Data
 @using Assignment1.Model
+
 @inject IAdultsData AdultsData
 @inject NavigationManager _navigationManager
 
@@ -14,6 +15,7 @@
     <select class="form-control selective" @onchange="@((arg) => FilterByGender(arg))" style="width:50px">
         <option>M</option>
         <option>F</option>
+        <option>All</option>
     </select>
 </p>
 
@@ -40,6 +42,7 @@ else
             <th>Adult age</th>
             <th>Adult job title</th>
             <th>Adult salary</th>
+            <th>Remove Adult</th>
         </tr>
         </thead>
         <tbody>
@@ -53,6 +56,11 @@ else
                 <td>@item.Age</td>
                 <td>@item.JobTitle.JobTitle</td>
                 <td>@item.JobTitle.Salary</td>
+                <td>
+                    <button @onclick="@(() => RemoveAdult(item.Id))">
+                        <i class="oi oi-trash" style="width: 50px"/>
+                    </button>
+                </td>
             </tr>
         }
         </tbody>
@@ -81,6 +89,7 @@ else
         if (searchByName != null)
         {
             adultsToShow = allAduts.Where(adult => adult.FirstName.Equals(searchByName)).ToList();
+            
         }
         else
         {
@@ -105,6 +114,14 @@ else
         {
             adultsToShow = allAduts;
         }
+    }
+    private void RemoveAdult(int itemId)
+    {
+        Adult adultToremove = allAduts.First(adult => adult.Id == itemId);
+        AdultsData.RemoveAdult(itemId);
+        allAduts.Remove(adultToremove);
+        adultsToShow.Remove(adultToremove);
+
     }
     
 

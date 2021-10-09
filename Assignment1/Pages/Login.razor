@@ -23,10 +23,12 @@
         <a href="" @onclick="PerformLogin">
             Login
         </a>
+         
     </NotAuthorized>
       <Authorized>
-          <a href="" @onclick="PerformLogout"></a>
-          Log out
+          <a href="" @onclick="PerformLogout">Log out
+              </a>
+                           
       </Authorized>
 </AuthorizeView>
 
@@ -65,7 +67,7 @@
         }
         catch (Exception e)
         {
-
+            errorMessage = e.Message;
         }
     }
 
