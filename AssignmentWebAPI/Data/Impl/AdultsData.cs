@@ -1,16 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
-using Assignment1.Model;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Diagnostics;
+using AssignmentWebAPI.Model;
 
-namespace Assignment1.Data.Impl
+namespace AssignmentWebAPI.Data.Impl
 {
-    public class AdultsData:IAdultsData
+    public class AdultsData : IAdultsData
     {
         private string adultFile = "adults.json";
         private IList<Adult> adults;
@@ -30,13 +26,13 @@ namespace Assignment1.Data.Impl
             }
         }
 
-        public async Task<IList<Adult>>  GetAdultsAsync()
+        public IList<Adult> GetAdults()
         {
             List<Adult> temp = new List<Adult>(adults);
             return temp;
         }
 
-        public async Task addAdultAsync(Adult adult)
+        public void addAdult(Adult adult)
         {
             int max = adults.Max(adult => adult.Id);
             adult.Id = (++max);
@@ -45,7 +41,17 @@ namespace Assignment1.Data.Impl
 
         }
 
-        public async Task RemoveAdultAsync(int id)
+        public Adult addAdultTwo(Adult adult)
+        {
+            int max = adults.Max(adult => adult.Id);
+            adult.Id = (++max);
+            adults.Add(adult);
+            WriteAdultsToFile();
+            return adult;
+
+        }
+
+        public void RemoveAdult(int id)
         {
             Adult adultToremove = adults.First(adult => adult.Id == id);
             adults.Remove(adultToremove);
@@ -53,7 +59,7 @@ namespace Assignment1.Data.Impl
 
         }
 
-        public async Task<Adult> getAdultAsync(int id)
+        public Adult getAdult(int id)
         {
             return adults.FirstOrDefault(adult => adult.Id == id);
         }

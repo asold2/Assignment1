@@ -134,8 +134,8 @@ using Assignment1.Data;
         adult = (Adult)person;
         adult.JobTitle = job;
         adult.Sex = sex;
-        
-        AdultsData.addAdult(adult);
+
+        AdultsData.addAdultAsync(adult);
         NavigationManager.NavigateTo("/ViewAdults");
     }
 

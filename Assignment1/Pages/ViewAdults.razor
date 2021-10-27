@@ -6,7 +6,9 @@
 @inject NavigationManager _navigationManager
 
 <h1>Adults</h1>
-
+<div>
+    <button type="button" class="btn btn-info" @onclick="ShowAllAdultsAsync" >Get All Adults</button>
+</div>
 <p>
     Filter by Adult's first name: <input type="text" @oninput="@((arg) => SearchByName(arg))" style="width: 50px"/>
 </p>
@@ -91,10 +93,11 @@ else
             adultsToShow = allAduts.Where(adult => adult.FirstName.Equals(searchByName)).ToList();
             
         }
-        else
+        else if (searchByName.Equals("All"))
         {
             adultsToShow = allAduts;
         }
+        
     }
 
     private void FilterByGender(ChangeEventArgs changeeventArgs)
@@ -118,22 +121,18 @@ else
     private void RemoveAdult(int itemId)
     {
         Adult adultToremove = allAduts.First(adult => adult.Id == itemId);
-        AdultsData.RemoveAdult(itemId);
+        AdultsData.RemoveAdultAsync(itemId);
         allAduts.Remove(adultToremove);
         adultsToShow.Remove(adultToremove);
 
     }
     
-
-   
-
-
-    protected override async Task OnInitializedAsync()
+    private async Task ShowAllAdultsAsync()
     {
-        allAduts = AdultsData.GetAdults();
+        allAduts = await AdultsData.GetAdultsAsync();
         adultsToShow = allAduts;
     }
-    
+
     }
 
 }

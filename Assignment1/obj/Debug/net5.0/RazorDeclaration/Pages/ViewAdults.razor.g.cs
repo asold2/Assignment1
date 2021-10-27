@@ -105,7 +105,7 @@ using Assignment1.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 73 "F:\C#Projetcs\Assignment1\Assignment1\Pages\ViewAdults.razor"
+#line 75 "F:\C#Projetcs\Assignment1\Assignment1\Pages\ViewAdults.razor"
       
     private IList<Adult> allAduts;
     private IList<Adult> adultsToShow;
@@ -127,10 +127,11 @@ using Assignment1.Model;
             adultsToShow = allAduts.Where(adult => adult.FirstName.Equals(searchByName)).ToList();
             
         }
-        else
+        else if (searchByName.Equals("All"))
         {
             adultsToShow = allAduts;
         }
+        
     }
 
     private void FilterByGender(ChangeEventArgs changeeventArgs)
@@ -154,22 +155,18 @@ using Assignment1.Model;
     private void RemoveAdult(int itemId)
     {
         Adult adultToremove = allAduts.First(adult => adult.Id == itemId);
-        AdultsData.RemoveAdult(itemId);
+        AdultsData.RemoveAdultAsync(itemId);
         allAduts.Remove(adultToremove);
         adultsToShow.Remove(adultToremove);
 
     }
     
-
-   
-
-
-    protected override async Task OnInitializedAsync()
+    private async Task ShowAllAdultsAsync()
     {
-        allAduts = AdultsData.GetAdults();
+        allAduts = await AdultsData.GetAdultsAsync();
         adultsToShow = allAduts;
     }
-    
+
     
 
 #line default

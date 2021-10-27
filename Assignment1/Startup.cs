@@ -31,9 +31,9 @@ namespace Assignment1
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddScoped<IUserService, AlreadyExistentUsers>();
+            services.AddScoped<IUserService, CloudUserService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
-            services.AddSingleton<IAdultsData, AdultsData>();
+            services.AddSingleton<IAdultsData, CloudAdultService>();
 
             services.AddAuthorization(options =>
             {

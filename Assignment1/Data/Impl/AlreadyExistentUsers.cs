@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Assignment1.Model;
 
 namespace Assignment1.Data.Impl
@@ -28,7 +29,7 @@ namespace Assignment1.Data.Impl
             }.ToList();
         }
 
-        public LoginUser ValidateUser(string username, string password)
+        public async Task<LoginUser>  ValidateUserAsync(string username, string password)
         {
             LoginUser first = loginUsers.FirstOrDefault(user => user.UserName.Equals(username));
             if (first == null)

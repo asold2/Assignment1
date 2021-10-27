@@ -109,7 +109,7 @@ using Assignment1.Authentication;
         errorMessage = "";
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             username = "";
             password = "";
             NavigationManager.NavigateTo("/AddAdults");
@@ -127,7 +127,7 @@ using Assignment1.Authentication;
         password = "";
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).LogOut();
+            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).LogOut();
              NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
