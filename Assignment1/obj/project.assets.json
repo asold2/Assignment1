@@ -1080,11 +1080,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\C#Projetcs\\Assignment1\\Assignment1\\Assignment1.csproj",
+      "projectUniqueName": "F:\\SpringGuru\\Assignment1\\Assignment1\\Assignment1.csproj",
       "projectName": "Assignment1",
-      "projectPath": "F:\\C#Projetcs\\Assignment1\\Assignment1\\Assignment1.csproj",
+      "projectPath": "F:\\SpringGuru\\Assignment1\\Assignment1\\Assignment1.csproj",
       "packagesPath": "C:\\Users\\asold\\.nuget\\packages\\",
-      "outputPath": "F:\\C#Projetcs\\Assignment1\\Assignment1\\obj\\",
+      "outputPath": "F:\\SpringGuru\\Assignment1\\Assignment1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"

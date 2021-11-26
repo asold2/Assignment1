@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = AssignmentWebAPI
-build_property.ProjectDir = F:\C#Projetcs\Assignment1\AssignmentWebAPI\
+build_property.ProjectDir = F:\SpringGuru\Assignment1\AssignmentWebAPI\

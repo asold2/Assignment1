@@ -1262,11 +1262,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\C#Projetcs\\Assignment1\\AssignmentWebAPI\\AssignmentWebAPI.csproj",
+      "projectUniqueName": "F:\\SpringGuru\\Assignment1\\AssignmentWebAPI\\AssignmentWebAPI.csproj",
       "projectName": "AssignmentWebAPI",
-      "projectPath": "F:\\C#Projetcs\\Assignment1\\AssignmentWebAPI\\AssignmentWebAPI.csproj",
+      "projectPath": "F:\\SpringGuru\\Assignment1\\AssignmentWebAPI\\AssignmentWebAPI.csproj",
       "packagesPath": "C:\\Users\\asold\\.nuget\\packages\\",
-      "outputPath": "F:\\C#Projetcs\\Assignment1\\AssignmentWebAPI\\obj\\",
+      "outputPath": "F:\\SpringGuru\\Assignment1\\AssignmentWebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"

@@ -13,70 +13,70 @@ namespace Assignment1.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "F:\C#Projetcs\Assignment1\Assignment1\_Imports.razor"
+#line 1 "F:\SpringGuru\Assignment1\Assignment1\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "F:\C#Projetcs\Assignment1\Assignment1\_Imports.razor"
+#line 2 "F:\SpringGuru\Assignment1\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "F:\C#Projetcs\Assignment1\Assignment1\_Imports.razor"
+#line 3 "F:\SpringGuru\Assignment1\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "F:\C#Projetcs\Assignment1\Assignment1\_Imports.razor"
+#line 4 "F:\SpringGuru\Assignment1\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "F:\C#Projetcs\Assignment1\Assignment1\_Imports.razor"
+#line 5 "F:\SpringGuru\Assignment1\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "F:\C#Projetcs\Assignment1\Assignment1\_Imports.razor"
+#line 6 "F:\SpringGuru\Assignment1\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "F:\C#Projetcs\Assignment1\Assignment1\_Imports.razor"
+#line 7 "F:\SpringGuru\Assignment1\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "F:\C#Projetcs\Assignment1\Assignment1\_Imports.razor"
+#line 8 "F:\SpringGuru\Assignment1\Assignment1\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "F:\C#Projetcs\Assignment1\Assignment1\_Imports.razor"
+#line 9 "F:\SpringGuru\Assignment1\Assignment1\_Imports.razor"
 using Assignment1;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "F:\C#Projetcs\Assignment1\Assignment1\_Imports.razor"
+#line 10 "F:\SpringGuru\Assignment1\Assignment1\_Imports.razor"
 using Assignment1.Shared;
 
 #line default
@@ -90,7 +90,7 @@ using Assignment1.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 35 "F:\C#Projetcs\Assignment1\Assignment1\Shared\NavMenu.razor"
+#line 35 "F:\SpringGuru\Assignment1\Assignment1\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
