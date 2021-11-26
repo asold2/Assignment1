@@ -26,9 +26,9 @@ namespace AssignmentWebAPI.Controllers
             Console.WriteLine("Here");
             try
             {
-                var user = userService.ValidateUser(username, password);
-                Console.WriteLine(user.Result.UserName);
-                return Ok(user.Result);
+                var user = await userService.ValidateUser(username, password);
+                Console.WriteLine(user.UserName);
+                return Ok(user);
             }
             catch (Exception e)
             {

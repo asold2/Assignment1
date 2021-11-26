@@ -14,19 +14,19 @@ namespace AssignmentWebAPI.Data.Impl
         {
             users = new List<LoginUser>();
 
-            users.Add(new LoginUser
-                {
-                    UserName = "Andrei",
-                    Role = "Admin",
-                    Password = "123456"
-                    
-                });
-                users.Add(new LoginUser
-                {
-                    UserName = "Ion",
-                    Role = "Admin",
-                    Password = "654321"
-                });
+            // users.Add(new LoginUser
+            //     {
+            //         UserName = "Andrei",
+            //         Role = "Admin",
+            //         Password = "123456"
+            //         
+            //     });
+            //     users.Add(new LoginUser
+            //     {
+            //         UserName = "Ion",
+            //         Role = "Admin",
+            //         Password = "654321"
+            //     });
         }
 
         public async Task<LoginUser> ValidateUser(string username, string password)

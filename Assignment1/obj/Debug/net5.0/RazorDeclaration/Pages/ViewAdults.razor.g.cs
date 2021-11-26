@@ -125,12 +125,13 @@ using Assignment1.Model;
         if (searchByName != null)
         {
             adultsToShow = allAduts.Where(adult => adult.FirstName.Equals(searchByName)).ToList();
+            if (adultsToShow.Count == 0)
+            {
+                adultsToShow = allAduts;
+            }
             
         }
-        else if (searchByName.Equals("All"))
-        {
-            adultsToShow = allAduts;
-        }
+        
         
     }
 
@@ -145,12 +146,14 @@ using Assignment1.Model;
         {}
         if (filterByGender != null)
         {
+            
             adultsToShow = allAduts.Where(adult => adult.Sex.Equals(filterByGender, StringComparison.OrdinalIgnoreCase)).ToList();
+            if (adultsToShow.Count == 0)
+            {
+                adultsToShow = allAduts;
+            }
         }
-        else
-        {
-            adultsToShow = allAduts;
-        }
+      
     }
     private void RemoveAdult(int itemId)
     {
