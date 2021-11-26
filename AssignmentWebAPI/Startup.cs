@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AssignmentWebAPI.Data;
 using AssignmentWebAPI.Data.Impl;
+using AssignmentWebAPI.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,8 +30,9 @@ namespace AssignmentWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IUserService, AlreadyExistentUsers>();
-            services.AddSingleton<IAdultsData, AdultsData>();
+            services.AddDbContext<FamiliesDbContext>();
+            services.AddScoped<IUserService, SqliteExistentUserService>();
+            services.AddScoped<IAdultsData, SqliteAdultService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "AssignmentWebAPI", Version = "v1"});

@@ -59,7 +59,7 @@ else
                 <td>@item.JobTitle.JobTitle</td>
                 <td>@item.JobTitle.Salary</td>
                 <td>
-                    <button @onclick="@(() => RemoveAdult(item.Id))">
+                    <button @onclick="@(() => RemoveAdult(@item.Id))">
                         <i class="oi oi-trash" style="width: 50px"/>
                     </button>
                 </td>

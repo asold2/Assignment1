@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using AssignmentWebAPI.Model;
 
 namespace AssignmentWebAPI.Data.Impl
@@ -26,13 +27,13 @@ namespace AssignmentWebAPI.Data.Impl
             }
         }
 
-        public IList<Adult> GetAdults()
+        public async Task<IList<Adult>> GetAdults()
         {
             List<Adult> temp = new List<Adult>(adults);
             return temp;
         }
 
-        public void addAdult(Adult adult)
+        public async Task addAdult(Adult adult)
         {
             int max = adults.Max(adult => adult.Id);
             adult.Id = (++max);
@@ -41,7 +42,7 @@ namespace AssignmentWebAPI.Data.Impl
 
         }
 
-        public Adult addAdultTwo(Adult adult)
+        public async Task<Adult> addAdultTwo(Adult adult)
         {
             int max = adults.Max(adult => adult.Id);
             adult.Id = (++max);
@@ -51,7 +52,7 @@ namespace AssignmentWebAPI.Data.Impl
 
         }
 
-        public void RemoveAdult(int id)
+        public async Task RemoveAdult(int id)
         {
             Adult adultToremove = adults.First(adult => adult.Id == id);
             adults.Remove(adultToremove);
@@ -59,9 +60,14 @@ namespace AssignmentWebAPI.Data.Impl
 
         }
 
-        public Adult getAdult(int id)
+        public async Task<Adult> getAdult(int id)
         {
             return adults.FirstOrDefault(adult => adult.Id == id);
+        }
+
+        public Task<Job> getAdultsJob(int id)
+        {
+            throw new System.NotImplementedException();
         }
 
         private void WriteAdultsToFile()

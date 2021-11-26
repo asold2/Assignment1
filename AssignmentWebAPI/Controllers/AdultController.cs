@@ -26,7 +26,7 @@ namespace AssignmentWebAPI.Controllers
         {
             try
             {
-                IList<Adult> adults = iAdultsData.GetAdults().ToList();
+                IList<Adult> adults = await iAdultsData.GetAdults();
                 return Ok(adults);
             }
             catch (Exception e)
@@ -36,17 +36,18 @@ namespace AssignmentWebAPI.Controllers
             }
         }
 
+
         [HttpPost]
         public async Task<ActionResult<Adult>> AddAdult([FromBody] Adult adult)
         {
-            Console.WriteLine("Heeeeeeeeeeeeeeeeeeeeeere");
+            
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
             try
             {
-                Adult added = iAdultsData.addAdultTwo(adult);
+                Adult added = await iAdultsData.addAdultTwo(adult);
                 return Created($"/{added.Id}", added);
             }
             catch (Exception e)
